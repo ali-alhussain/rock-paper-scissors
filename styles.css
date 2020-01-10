@@ -1,0 +1,23 @@
+html {
+  background-color: peachpuff;
+}
+h1 {
+  text-align: center;
+  font-size: 40px;
+}
+
+button {
+  text-align: center;
+  margin: 0 auto;
+  font-size: 20px;
+}
+
+main {
+  text-align: center;
+  margin: 0 auto;
+}
+
+h2 {
+  font-size: 1.5em;
+  color: orangered;
+}
