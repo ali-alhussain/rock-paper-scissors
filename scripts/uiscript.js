@@ -3,6 +3,9 @@ function computerPlay() {
   return play[Math.floor(Math.random() * 3)];
 }
 
+let playerWin = 0;
+let computerWin = 0;
+
 function playRound() {
   // your code here!
   let playerSelection = this.id;
@@ -23,6 +26,7 @@ function playRound() {
         "<br>Computer played " +
         computerSelection.toLowerCase() +
         "<br>You Lose! Paper beats Rock";
+      computerWin += 1;
     } else {
       document.getElementById("result").innerHTML =
         "You played " +
@@ -30,6 +34,7 @@ function playRound() {
         "<br>Computer played " +
         computerSelection.toLowerCase() +
         "<br>You Win! Rock beats Scissors";
+      playerWin += 1;
     }
   } else if (playerSelection.toLowerCase() === "paper") {
     if (computerSelection.toLowerCase() === "rock") {
@@ -39,6 +44,7 @@ function playRound() {
         "<br>Computer played " +
         computerSelection.toLowerCase() +
         "<br>You Win! Paper beats Rock";
+      playerWin += 1;
     } else {
       document.getElementById("result").innerHTML =
         "You played " +
@@ -46,6 +52,7 @@ function playRound() {
         "<br>Computer played " +
         computerSelection.toLowerCase() +
         "<br>You Lose! Scissors beats Paper";
+      computerWin += 1;
     }
   } else if (playerSelection.toLowerCase() === "scissors") {
     if (computerSelection.toLowerCase() === "rock") {
@@ -55,6 +62,7 @@ function playRound() {
         "<br>Computer played " +
         computerSelection.toLowerCase() +
         "<br>You Lose! Rock beats Scissors";
+      computerWin += 1;
     } else {
       document.getElementById("result").innerHTML =
         "You played " +
@@ -62,7 +70,31 @@ function playRound() {
         "<br>Computer played " +
         computerSelection.toLowerCase() +
         "<br>You Win! Scissors beats Paper";
+      playerWin += 1;
     }
+  }
+
+  if (playerWin === 5) {
+    document.getElementById("game").innerHTML =
+      "You won: " +
+      playerWin +
+      "<br>Computer Won: " +
+      computerWin +
+      "<br>You won the game!";
+    playerWin = 0;
+    computerWin = 0;
+  } else if (computerWin === 5) {
+    document.getElementById("game").innerHTML =
+      "You won: " +
+      playerWin +
+      "<br>Computer Won: " +
+      computerWin +
+      "<br>Computer won the game!";
+    playerWin = 0;
+    computerWin = 0;
+  } else {
+    document.getElementById("game").innerHTML =
+      "You won: " + playerWin + "<br>Computer Won: " + computerWin;
   }
 }
 
